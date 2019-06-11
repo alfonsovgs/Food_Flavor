@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
 import 'data/items__category.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,12 +26,10 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   Container(
                     height: 100.0,
                     child: _buildListPopularCard(context),
                   ),
-                  //
                 ],
               ),
             ),
@@ -84,7 +81,7 @@ class HomePage extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
 
     return Container(
-      height: height * .53,
+      height: height / 2,
       child: Stack(
         children: <Widget>[
           Container(
@@ -130,7 +127,6 @@ class HomePage extends StatelessWidget {
 
   Widget _buildCardText() {
     var baseStyle = TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -196,7 +192,6 @@ class HomePage extends StatelessWidget {
             child: _buildPopularCard(items[position]),
           );
         }
-
         return _buildPopularCard(items[position]);
       },
     );
