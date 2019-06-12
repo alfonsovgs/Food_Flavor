@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:food_flavor_app/detail_page.dart';
 import 'data/items__category.dart';
 
 class HomePage extends StatelessWidget {
@@ -82,45 +83,53 @@ class HomePage extends StatelessWidget {
 
     return Container(
       height: height / 2,
-      child: Stack(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/sirloin_steak.jpg"),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.all(
-                Radius.circular(20),
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.black26,
-              borderRadius: BorderRadius.all(
-                Radius.circular(20),
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              padding: EdgeInsets.only(bottom: 10),
-              height: 150,
-              width: width - 50,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DetailPage()),
+          );
+        },
+        child: Stack(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/sirloin_steak.jpg"),
+                  fit: BoxFit.cover,
                 ),
-                child: _buildCardText(),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
               ),
             ),
-          ),
-        ],
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.black26,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                padding: EdgeInsets.only(bottom: 10),
+                height: 150,
+                width: width - 50,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  child: _buildCardText(),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
