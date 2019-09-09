@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:food_flavor_app/detail_page.dart';
-import 'data/items__category.dart';
+import 'package:food_flavor_app/data/items__category.dart';
+import 'package:food_flavor_app/pages/detail_page.dart';
+import 'package:food_flavor_app/widgets/home_appbar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        CustomAppBar(),
+                        HomeAppBar(),
                         _buildSearchBar(),
                         _buildRecommendedText(),
                         _buildCards(context),
@@ -203,29 +204,6 @@ class HomePage extends StatelessWidget {
         }
         return _buildPopularCard(items[position]);
       },
-    );
-  }
-}
-
-class CustomAppBar extends StatelessWidget {
-  final double barHeight = 66.0;
-
-  @override
-  Widget build(BuildContext context) {
-    final double statusBarHeight = MediaQuery.of(context).padding.top;
-
-    return Container(
-      padding: EdgeInsets.only(
-        top: statusBarHeight,
-      ),
-      height: statusBarHeight + barHeight,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text("Eat on time", style: TextStyle(fontSize: 16.0, color: Colors.grey)),
-          Text("Food flavor", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-        ],
-      ),
     );
   }
 }

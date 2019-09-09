@@ -1,21 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DetailPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          CustomAppBar(),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomAppBar extends StatelessWidget {
+class DetailAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
