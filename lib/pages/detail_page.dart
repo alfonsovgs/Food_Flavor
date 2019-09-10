@@ -14,6 +14,8 @@ class DetailPage extends StatelessWidget {
           _buildTags(),
           _buildStarred(),
           _buildDivider(),
+          _buildDetais(),
+          _buildBooking(),
         ],
       ),
     );
@@ -95,6 +97,62 @@ class DetailPage extends StatelessWidget {
     return Container(
       child: Divider(color: Colors.black87),
       padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+    );
+  }
+
+  Widget _buildDetais() {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Food story",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                Text("If you ask for Pasta Alfredo"),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                color: Colors.red,
+                height: 200,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBooking() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Row(
+        children: <Widget>[
+          Text("12"),
+          SizedBox(width: 20),
+          Expanded(
+            child: FlatButton(
+              child: Text(
+                "Booking",
+                style: TextStyle(fontSize: 18),
+              ),
+              color: Colors.redAccent,
+              onPressed: () {},
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
